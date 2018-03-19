@@ -1,7 +1,7 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -17,7 +17,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Journal',
+      title: 'hungry-bear',
       template: './src/index.html',
       inject: 'body'
     })
@@ -33,10 +33,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: [
-            /node_modules/,
-            /spec/
-          ],
+        exclude: /node_modules/,
         loader: "eslint-loader"
       },
       {

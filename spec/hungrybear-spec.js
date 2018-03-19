@@ -1,15 +1,11 @@
 import { HungryBear } from './../js/hungrybear.js';
 
-beforeEach(function() {
-    jasmine.clock().install();
-    fuzzy.setHunger();
-  });
-
 describe('HungryBear', function() {
   let fuzzy = new HungryBear("Fuzzy");
 
   beforeEach(function() {
     jasmine.clock().install();
+     fuzzy.setHunger();
   });
 
   afterEach(function() {
@@ -21,7 +17,12 @@ describe('HungryBear', function() {
     expect(fuzzy.foodLevel).toEqual(10);
   });
 
-  it('should get very hungry if the food level drops below zero', function() {
+  it('should have a food level of 7 after 3001 milliseconds', function() {
+    jasmine.clock().tick(3001);
+    expect(fuzzy.foodLevel).toEqual(7);
+  });
+
+    it('should get very hungry if the food level drops below zero', function() {
     fuzzy.foodLevel = 0;
     expect(fuzzy.didYouGetEaten()).toEqual(true);
   });
@@ -35,10 +36,5 @@ describe('HungryBear', function() {
     jasmine.clock().tick(9001);
     fuzzy.feed();
     expect(fuzzy.foodLevel).toEqual(10);
-  });
-
-  it('should have a food level of 7 after 3001 milliseconds', function() {
-    jasmine.clock().tick(3001);
-    expect(fuzzy.foodLevel).toEqual(7);
   });
 });

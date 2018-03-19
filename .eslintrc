@@ -3,17 +3,18 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "extends": "eslint:recommended",
-  "env": {
-    "browser": true,
-    "jquery": true,
-    "node": true
-  },
-  "rules": {
-    "semi": 1,
-    "indent": ["warn",2],
-    "no-console": "warn",
-    "no-debugger": "warn",
-    "no-unused-vars": "warn"
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "jquery": true,
+      "jasmine": true,
+      "node": true
+    },
+ "rules": {
+      "semi": 1,
+      "indent": ["warn", 2],
+      "no-console": "warn",
+      "no-debugger": "warn",
+      "no-unused-vars": "warn"
   }
 }
