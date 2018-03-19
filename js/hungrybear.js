@@ -19,7 +19,7 @@ export class HungryBear {
   }
 }
 
-feed() {
-  this.foodLevel = 10;
+  feed() {
+    this.foodLevel = 10;
   }
 }
